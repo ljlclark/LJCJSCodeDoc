@@ -1,0 +1,2 @@
+# LJCJSCodeDoc
+JavaScript code documentation.
