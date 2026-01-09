@@ -53,6 +53,69 @@
       Checks keydown for a Tab key.
     </div>
     <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+&lt;body&gt;
+  &lt;input type="text" id="targetInput"&gt;
+  &lt;div id="testDiv"&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+CompareValue = "";
+      
+// Checks keydown for a Tab key.
+IsTab()
+{
+  const elementID = "targetInput";
+  const eventName = "keydown";
+  const handler = this.IsTabHandler.bind(this);
+  LJC.AddEvent(elementID, eventName, handler);
+
+  // Tab
+  let eventOptions = {
+    key: "Tab",
+    code: "Tab",
+    ctrlKey: false,
+    shiftKey: false,
+    altKey: false,
+    metaKey: false,
+    repeat: false,
+    bubbles: true
+  };
+  let keyDownEvent = new KeyboardEvent('keydown', eventOptions);
+        
+  this.CompareValue = true;
+  targetInput.dispatchEvent(keyDownEvent);
+
+  // BackTab
+  eventOptions.key = "";
+  eventOptions.code = "";
+  keyDownEvent = new KeyboardEvent('keydown', eventOptions);
+  this.CompareValue = false;
+  targetInput.dispatchEvent(keyDownEvent);
+
+  targetInput.removeEventListener("keydown", handler);
+}
+
+IsTabHandler(keyDownEvent)
+{
+  const result = LJC.IsTab(keyDownEvent);
+
+  // result:
+  // this.CompareValue;
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <div class="SmallText">
       Copyright &copy Lester J. Clark and Contributors.<br />
       Licensed under the MIT License.

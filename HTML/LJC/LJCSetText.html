@@ -48,6 +48,41 @@
       Sets the element text.
     </div>
     <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+&lt;body&gt;
+  &lt;input type="text" id="targetInput"&gt;
+  &lt;div id="testDiv"&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+// Sets the element text.
+SetText()
+{
+  LJC.SetText("testDiv", "X");
+  let result = LJC.GetText("testDiv");
+        
+  // result:
+  // "X";
+
+  LJC.SetText("testDiv", "");
+  result = LJC.GetText("testDiv");
+        
+  // result:
+  // "";
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <div class="SmallText">
       Copyright &copy Lester J. Clark and Contributors.<br />
       Licensed under the MIT License.

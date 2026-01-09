@@ -48,6 +48,41 @@
       Sets the input element value.
     </div>
     <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+&lt;body&gt;
+  &lt;input type="text" id="targetInput"&gt;
+  &lt;div id="testDiv"&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+// Sets the input element value.
+SetValue()
+{
+  LJC.SetValue("targetInput", "X");
+  let result = LJC.GetValue("targetInput");
+        
+  // result:
+  // "X";
+
+  LJC.SetValue("targetInput", "");
+  result = LJC.GetValue("targetInput");
+        
+  // result:
+  // "";
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <div class="SmallText">
       Copyright &copy Lester J. Clark and Contributors.<br />
       Licensed under the MIT License.

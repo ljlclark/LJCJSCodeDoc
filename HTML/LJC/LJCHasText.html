@@ -53,6 +53,36 @@
       Checks if the text has a value.
     </div>
     <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+// Checks if the text has a value.
+HasText()
+{
+  let text = "X";
+  let result = LJC.HasText(text);
+
+  // result:
+  // true
+
+  text = "  ";
+  result = LJC.HasText(text);
+
+  // result:
+  // false
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <div class="SmallText">
       Copyright &copy Lester J. Clark and Contributors.<br />
       Licensed under the MIT License.
