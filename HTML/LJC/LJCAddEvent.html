@@ -59,10 +59,40 @@
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
+CompareValue = "";
+
 // Adds an event handler.
 AddEvent()
 {
+  const elementID = "targetInput";
+  const eventName = "keydown";
+  const handler = this.AddEventHandler.bind(this);
+  LJC.AddEvent(elementID, eventName, handler);
 
+  // Tab
+  let eventOptions = {
+    key: "Tab",
+    code: "Tab",
+    ctrlKey: false,
+    shiftKey: false,
+    altKey: false,
+    metaKey: false,
+    repeat: false,
+    bubbles: true
+  };
+  let keyDownEvent = new KeyboardEvent('keydown', eventOptions);
+  this.CompareValue = true;
+  targetInput.dispatchEvent(keyDownEvent);
+
+  targetInput.removeEventListener("keydown", handler);
+}
+
+AddEventHandler(keyDownEvent)
+{
+  const result = LJC.IsTab(keyDownEvent);
+
+  // result:
+  // true
 }</pre>
             </td>
           </tr>
