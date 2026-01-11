@@ -65,7 +65,16 @@
 // Gets the HTMLElement by ID.
 Element()
 {
+  const elementID = "testDiv";
+  const element = LJC.Element(elementID);
 
+  let result = element.tagName;
+  // result:
+  // "DIV";
+
+  result = element.id;
+  // result:
+  // "testDiv";
 }</pre>
             </td>
           </tr>

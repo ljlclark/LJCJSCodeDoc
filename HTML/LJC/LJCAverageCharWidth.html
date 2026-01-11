@@ -66,7 +66,13 @@
 // Gets the average character width using the first selector element font.
 AverageCharWidth()
 {
+  const selector = "div";
+  const text = "This is sample text.";
+  const result = LJC.AverageCharWidth(selector, text);
 
+  // With font = "16px "Times New Roman"
+  // result:
+  // 6.22;
 }</pre>
             </td>
           </tr>

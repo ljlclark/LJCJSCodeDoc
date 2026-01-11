@@ -66,7 +66,16 @@
 // Gets the text width.
 TextWidth()
 {
+  const element = document.body;
+  const propertyName = "font";
+  const font = LJC.ElementStyle(element, propertyName);
+  const text = "This is sample text.";
+  const value = LJC.TextWidth(font, text);
+  const result = LJC.Round(value);
 
+  // With font = "16px "Times New Roman"
+  // result:
+  // 124
 }</pre>
             </td>
           </tr>
