@@ -65,7 +65,13 @@
 // Creates JSON from the provided value.
 CreateJSON()
 {
+  let object = {};
+  object.Name = "First";
+  object.Sequence = 1;
+  const result = LJC.CreateJSON(object);
 
+  // result:
+  // {\"Name\":\"First\",\"Sequence\":1}
 }</pre>
             </td>
           </tr>

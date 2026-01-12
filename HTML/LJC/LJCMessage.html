@@ -60,10 +60,34 @@
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
+&lt;body&gt;
+  &lt;!-- The dialog for debug or other display text. --&gt;
+  &lt;dialog id="textDialog"
+    style="border: none; padding: 0px"&gt;
+    &lt;textarea id="textArea" rows="25" cols="80" autocorrect="off"
+      autocapitalize="off" spellcheck="false" readonly
+      style="border: none; padding: 10px"&gt;
+    &lt;/textarea&gt;
+  &lt;/dialog&gt;
+&lt;/body&gt;
+
 // Shows the service message.
 Message()
 {
-
+  const location = LJC.Location("Class", "Method()", "textValue");
+  const textValue = "This is some text shown in a \"textarea\""
+    + " dialog to display more text than allowed by an alert message"
+    + " and to allow the copy to clipboard function."
+    + "\r\nText that starts with \"\"ServiceName\":\","
+    + " \"delete\", \"insert\", \"select\" or \"update\" will not display"
+    + " unless the \"force\" parameter is set to \"true\"."
+    + "\r\nAn alert dialog is displayed if the textDialogID or textAreaID"
+    + " parameters are null."
+    + "\r\nUse the Escape [ESC] key to exit the dialog."
+  const force = false;
+  const textDialogID = "textDialog";
+  const textAreaID = "textArea";
+  LJC.Message(location, textValue, force, textDialogID, textAreaID);
 }</pre>
             </td>
           </tr>

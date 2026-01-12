@@ -65,7 +65,31 @@
 // Creates a mouse location object.
 MouseLocation()
 {
+  const handler = this.MouseLocationHandler.bind(this);
+  document.addEventListener("contextmenu", handler);
 
+  // Right mouse button.
+  let eventOptions = {
+    bubbles: true,
+    cancelable: true,
+    button: 2,
+    buttons: 2,
+    view: window,
+    clientY: 10,
+  };
+  let mouseEvent = new MouseEvent('contextmenu', eventOptions);
+  document.dispatchEvent(mouseEvent);
+
+  document.removeEventListener("contextmenu", handler);
+}
+
+MouseLocationHandler(mouseEvent)
+{
+  const mouseLocation = LJC.MouseLocation(mouseEvent);
+  const result = mouseLocation.Top;
+
+  // result:
+  // 10;
 }</pre>
             </td>
           </tr>

@@ -65,7 +65,12 @@
 // Parses JSON into an object.
 ParseJSON()
 {
+  const json = "{\"Name\":\"First\",\"Sequence\":1}";
+  const object = LJC.ParseJSON(json);
+  const result = object.Name;
 
+  // result:
+  // "First";
 }</pre>
             </td>
           </tr>

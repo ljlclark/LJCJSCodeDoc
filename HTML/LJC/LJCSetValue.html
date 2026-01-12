@@ -59,20 +59,20 @@
               <pre style='margin-left: 2px;'>
 &lt;body&gt;
   &lt;input type="text" id="targetInput"&gt;
-  &lt;div id="testDiv"&gt;&lt;/div&gt;
 &lt;/body&gt;
 
 // Sets the input element value.
 SetValue()
 {
-  LJC.SetValue("targetInput", "X");
-  let result = LJC.GetValue("targetInput");
+  const elementID = "targetInput";
+  LJC.SetValue(elementID, "X");
+  let result = LJC.GetValue(elementID);
         
   // result:
   // "X";
 
-  LJC.SetValue("targetInput", "");
-  result = LJC.GetValue("targetInput");
+  LJC.SetValue(elementID, "");
+  result = LJC.GetValue(elementID);
         
   // result:
   // "";

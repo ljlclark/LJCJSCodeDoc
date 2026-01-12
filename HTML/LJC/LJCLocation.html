@@ -67,7 +67,13 @@
 // Creates the debug location text.
 Location()
 {
+  const className = "Class";
+  const methodName = "Method()";
+  const valueName = "value";
+  const result = LJC.Location(className, methodName, valueName);
 
+  // result
+  // Class.Method() value:
 }</pre>
             </td>
           </tr>
