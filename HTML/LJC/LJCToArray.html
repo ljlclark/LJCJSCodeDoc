@@ -65,7 +65,70 @@
 // Copy collection items to an indexed array.
 ToArray()
 {
+  class Item
+  {
+    Text = "";
+  }
+        
+  class Items
+  {
+    // The current items count.
+    Count = 0;
 
+    // The current #Items clone.
+    ReadItems = [];
+
+    // The private object array is part of what makes it a strongly typed
+    // collection.
+    #Items = [];
+
+    // Adds the supplied object to the list.
+    AddObject(item)
+    {
+      let retItem = null;
+
+      // This check is part of what makes it a strongly typed collection.
+      if (item instanceof Item)
+      {
+        retItem = item;
+        this.#Items.push(item);
+        this.Count = this.#Items.length;
+        this.ReadItems = Array.from(this.#Items);
+      }
+      return retItem;
+    }
+
+    // Retrieves the object with the supplied index.
+    RetrieveAtIndex(index)
+    {
+      let retObject = null;
+
+      if (index >= 0
+        &amp;&amp; this.#Items.length > index)
+      {
+        retObject = this.#Items[index];
+      }
+      return retObject;
+    }
+  }
+
+  let items = new Items();
+  let item = new Item();
+  item.Text = "First Object";
+  items.AddObject(item);
+  item = new Item();
+  item.Text = "Second Object";
+  items.AddObject(item);
+
+  // The collection object must support Count and RetrieveAtIndex().
+  const array = LJC.ToArray(items);
+  if (LJC.HasElements(array))
+  {
+    const result = array[1].Text;
+
+    // result:
+    // Second Object
+  }
 }</pre>
             </td>
           </tr>

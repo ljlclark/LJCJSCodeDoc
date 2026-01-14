@@ -62,7 +62,26 @@
 // Sets the element visibility.
 Visibility()
 {
+  // &lt;body&gt;
+  //   &lt;div id="testDiv"&gt;&lt;/div&gt;
+  // &lt;/body&gt;
 
+  const elementID = "testDiv";
+  let value = "hidden";
+  LJC.Visibility(elementID, value);
+  let element = LJC.Element(elementID);
+  let result = element.style.visibility;
+
+  // result:
+  // hidden;
+
+  value = "visible";
+  LJC.Visibility(elementID, value);
+  element = LJC.Element(elementID);
+  result = element.style.visibility;
+
+  // result:
+  // visible
 }</pre>
             </td>
           </tr>
