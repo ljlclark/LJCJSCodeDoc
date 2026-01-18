@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- Copyright (c) Lester J. Clark and Contributors -->
 <!-- Licensed under the MIT license. -->
-<!-- Join.Copy.html -->
+<!-- Joins.Add.html -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Copy</title>
+  <title>Add</title>
   <meta charset="utf-8" />
   <meta name="author" content="Lester J. Clark" />
   <meta name="viewport" content="width=device-width" initial-scale=1 />
@@ -16,20 +16,24 @@
     <div class="PathText">
       / <a href="../../LJCJSCodeDoc.html#LJCDBAccessLib">LJCJSCodeDoc</a>
       / <a href="../LJCDBAccessLib.html">LJCDBAccessLib</a>
-      / <a href="LJCJoin.html">LJCJoin</a>
-      / Copy
+      / <a href="LJCJoins.html">LJCJoins</a>
+      / Add
     </div>
     <br />
     <div id='Header'>
-      <div id='Title'>Method Copy()</div>
+      <div id='Title'>Method Add</div>
     </div>
     <br />
     <div id='Title'>Parameters</div>
-    <div class='Text'>objColumn - A simple object.</div>
+    <div class='Text'>propertyName - The property name.</div>
+    <div class='Text'>columnName - The column name.</div>
+    <div class='Text'>renameAs - The rename value.</div>
+    <div class='Text'>dataTypeName - The data type name.</div>
+    <div class='Text'>value - The column value.</div>
     <br />
     <div class='Text'>Returns</div>
     <br />
-    <div class='Text'>A data object.</div>
+    <div class='Text'>The added item.</div>
     <br />
     <div class='Text'>Syntax</div>
     <br />
@@ -39,7 +43,7 @@
           <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              Copy(objJoin)
+              Add(propertyName, columnName, renameAs, dataTypeName, value)
             </td>
           </tr>
         </tbody>
@@ -47,32 +51,7 @@
     </div>
     <br />
     <div class='Text'>
-      Creates a new object from simple object values.
-    </div>
-    <br />
-    <div class='Text'>Example</div>
-    <br />
-    <div class='SectionContainer'>
-      <table class='CodeTable'>
-        <tbody>
-          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
-          <tr class='CodeTable'>
-            <td class='CodeTable'>
-              <pre style='margin-left: 2px;'>
-// Creates a new object with existing simple object values.
-Copy()
-{
-  const simpleJoin = { "TableName": "TableName", "TableAlias": "t" };
-  const join = LJCJoin.Copy(simpleJoin);
-
-  const result = join.TableName;
-  const compare = "TableName";
-  LJC.CheckValues("Copy()", result, compare);
-}</pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      Creates and adds the item to the list.
     </div>
     <br />
     <div class="SmallText">

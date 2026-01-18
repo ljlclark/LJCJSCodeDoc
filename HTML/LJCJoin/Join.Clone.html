@@ -47,6 +47,33 @@
       Creates an object clone.
     </div>
     <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+// Creates a clone of this object.
+Clone()
+{
+  const tableName = "TableName";
+  const tableAlias = "t";
+  const join = new LJCJoin(tableName, tableAlias);
+
+  let clone = join.Clone();
+  const result = clone.TableName;
+  const compare = "TableName";
+  LJC.CheckValues("Clone()", result, compare);
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <div class="SmallText">
       Copyright &copy Lester J. Clark and Contributors.<br />
       Licensed under the MIT License.

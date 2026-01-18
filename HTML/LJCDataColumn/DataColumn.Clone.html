@@ -47,6 +47,34 @@
       Creates an object clone.
     </div>
     <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+// Creates an object clone.
+Clone()
+{
+  const propertyName = "PropertyName";
+  const value = "PropertyValue";
+  const column = new LJCDataColumn(propertyName);
+  column.Value = value;
+
+  let clone = column.Clone();
+  const result = clone.PropertyName;
+  const compare = "PropertyName";
+  LJC.CheckValues("Clone()", result, compare);
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <div class="SmallText">
       Copyright &copy Lester J. Clark and Contributors.<br />
       Licensed under the MIT License.

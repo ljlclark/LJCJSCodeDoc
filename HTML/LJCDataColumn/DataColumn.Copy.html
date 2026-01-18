@@ -50,6 +50,34 @@
       Creates a new object from simple object values.
     </div>
     <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+// Creates a new object with existing standard object values.
+Copy()
+{
+  const simpleDataColumn = {
+    "PropertyName": "PropertyName",
+    "Value": "PropertyValue",
+  };
+  const column = LJCDataColumn.Copy(simpleDataColumn);
+
+  const result = column.PropertyName;
+  const compare = "PropertyName";
+  LJC.CheckValues("Copy()", result, compare);
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <div class="SmallText">
       Copyright &copy Lester J. Clark and Contributors.<br />
       Licensed under the MIT License.
