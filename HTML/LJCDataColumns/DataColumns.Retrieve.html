@@ -50,6 +50,33 @@
       Retrieves the object which matches the data values.
     </div>
     <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+// Retrieves the object which matches the data values.
+Retrieve()
+{
+  const columns = new LJCDataColumns();
+  let column = columns.Add("Name");
+  column = columns.Add("Sequence");
+
+  column = columns.Retrieve("Name");
+  const result = column.PropertyName;
+  let compare = "Name";
+  LJC.CheckValues("Retrieve()", result, compare);
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <div class="SmallText">
       Copyright &copy Lester J. Clark and Contributors.<br />
       Licensed under the MIT License.

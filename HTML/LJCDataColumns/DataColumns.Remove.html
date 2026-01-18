@@ -50,6 +50,38 @@
       Removes the the object which matches the data values.
     </div>
     <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+// Removes the object which matches the data values.
+Remove()
+{
+  const columns = new LJCDataColumns();
+  let column = columns.Add("Name");
+  column = columns.Add("Sequence");
+
+  columns.Remove("Name");
+  column = columns.Retrieve("Name");
+  let result = "Found";
+  if (null == column)
+  {
+    result = "";
+  }
+  let compare = "";
+  LJC.CheckValues("Remove()", result, compare);
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <div class="SmallText">
       Copyright &copy Lester J. Clark and Contributors.<br />
       Licensed under the MIT License.

@@ -50,6 +50,34 @@
       Create typed collection from deserialized JavasScript array.
     </div>
     <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+// Create typed collection from deserialized JavasScript array.
+ToCollection()
+{
+  const array = [
+    { PropertyName: "Name", Value: "First" },
+    { PropertyName: "Sequence", Value: 1 },
+  ];
+
+  const columns = LJCDataColumns.ToCollection(array);
+  const result = columns.Count;
+  const compare = 2;
+  LJC.CheckValues("ToCollection()", result, compare);
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <div class="SmallText">
       Copyright &copy Lester J. Clark and Contributors.<br />
       Licensed under the MIT License.
