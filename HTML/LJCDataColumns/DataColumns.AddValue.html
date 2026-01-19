@@ -70,14 +70,16 @@ AddValue()
 
   column = columns.Retrieve("Sequence");
   let result = column.Value;
-  let compare = 1;
-  LJC.CheckValues("AddValue()", result, compare);
+
+  // result:
+  // 1
 
   columns.AddValue("Sequence", 2);
   column = columns.Retrieve("Sequence");
   result = column.Value;
-  compare = 2;
-  LJC.CheckValues("AddValue()", result, compare);
+
+  // result:
+  // 2
 }</pre>
             </td>
           </tr>

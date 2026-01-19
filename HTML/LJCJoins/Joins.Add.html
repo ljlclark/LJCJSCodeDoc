@@ -54,6 +54,35 @@
       Creates and adds the item to the list.
     </div>
     <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+// Adds the item to the array.
+Add()
+{
+  const joins = new LJCJoins();
+  let join = joins.Add("TableOne", "t");
+  join = joins.Add("TableTwo", "t2");
+  join.SchemaName = "Schema";
+
+  join = joins.Retrieve("TableTwo", "t2");
+  let result = join.SchemaName;
+
+  // result:
+  // Schema
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <div class="SmallText">
       Copyright &copy Lester J. Clark and Contributors.<br />
       Licensed under the MIT License.

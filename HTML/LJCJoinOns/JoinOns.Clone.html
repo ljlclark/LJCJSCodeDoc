@@ -47,6 +47,34 @@
       Creates a clone of this object.
     </div>
     <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+// Creates a clone of this object.
+Clone()
+{
+  const joinOns = new LJCJoinOns();
+  let joinOn = joinOns.Add("fromColumnName1", "toColumnName1");
+  joinOn = joinOns.Add("fromColumnName2", "toColumnName2");
+
+  let clone = joinOns.Clone();
+  const result = clone.Count;
+
+  // result:
+  // 2
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
     <div class="SmallText">
       Copyright &copy Lester J. Clark and Contributors.<br />
       Licensed under the MIT License.
