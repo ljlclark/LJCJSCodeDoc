@@ -65,10 +65,40 @@
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
+&lt;body&gt;
+  &lt;!-- The dialog for debug or other display text. --&gt;
+  &lt;dialog id="textDialog"
+    style="border: none; padding: 0px"&gt;
+    &lt;textarea id="textArea" rows="25" cols="80" autocorrect="off"
+      autocapitalize="off" spellcheck="false" readonly
+      style="border: none; padding: 10px"&gt;
+    &lt;/textarea&gt;
+  &lt;/dialog&gt;
+&lt;/body&gt;
+
 // Gets the textarea columns.
 GetTextCols()
 {
+  const className = "ClassName";
+  const methodName = "MethodName()";
+  const valueName = "text";
+  const value = "This is the\r\nthree line\r\ntext value.";
+  const force = false;
+  const textDialogID = "textDialog";
+  const textAreaID = "textArea";
+  LJC.ShowText(className, methodName, valueName, value, force, textDialogID
+    , textAreaID);
 
+  const eTextArea = LJC.Element(textAreaID);
+  const font = LJC.ElementStyle(eTextArea, "font");
+  const averageCharWidth = LJC.AverageFontCharWidth(font, value);
+
+  const characterCount = 40;
+  const clientWidth = characterCount * averageCharWidth;
+  const columns = 1;
+
+  eTextArea.cols = LJC.GetTextCols(clientWidth, columns, averageCharWidth);
+  LJC.SetTextRows(eTextArea);
 }</pre>
             </td>
           </tr>
