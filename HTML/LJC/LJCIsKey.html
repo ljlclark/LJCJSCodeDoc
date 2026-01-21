@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- Copyright(c) Lester J. Clark and Contributors. -->
 <!-- Licensed under the MIT License.-->
-<!-- LJCIsBackTab.html -->
+<!-- LJCIsKey.html -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>IsBackTab</title>
+  <title>IsKey</title>
   <meta charset="utf-8" />
   <meta name="author" content="Lester J. Clark" />
   <meta name="description" content="JS method code documentation." />
@@ -18,20 +18,21 @@
       / <a href="../../LJCJSCodeDoc.html#LJCCommonLib">LJCJSCodeDoc</a>
       / <a href="../LJCCommonLib.html">LJCCommonLib</a>
       / <a href="LJC.html">LJC</a>
-      / IsBackTab
+      / IsKey
     </div>
     <br />
     <div id='Header'>
-      <div id='Title'>Method IsBackTab</div>
+      <div id='Title'>Method IsKey</div>
     </div>
     <br />
     <div id='Title'>Parameters</div>
-    <div class='Text'>keyDownEvent - The target event.</div>
+    <div class='Text'>key - The key value.</div>
+    <div class='Text'>keyDownEvent - The keydown event.</div>
     <br />
     <div class='Text'>Returns</div>
     <br />
     <div class='Text'>
-      true if a backtab; otherwise false.
+      true if the supplied key and no shift key; otherwise false.
     </div>
     <br />
     <div class='Text'>Syntax</div>
@@ -42,7 +43,7 @@
           <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              static IsBackTab(keyDownEvent)
+              static IsKey(key, keyDownEvent)
             </td>
           </tr>
         </tbody>
@@ -50,7 +51,7 @@
     </div>
     <br />
     <div class='Text'>
-      Checks keydown for a Backtab key.
+      Checks keydown for a supplied key.
     </div>
     <br />
     <div class='Text'>Example</div>
@@ -69,12 +70,12 @@
 
 CompareValue = "";
       
-// Checks keydown for a Backtab key.
-IsBackTab()
+// Checks keydown for a supplied key.
+IsKey()
 {
   const elementID = "targetInput";
   const eventName = "keydown";
-  const handler = this.IsBackTabHandler.bind(this);
+  const handler = this.IsKeyHandler.bind(this);
   LJC.AddEvent(elementID, eventName, handler);
 
   // Tab
@@ -82,31 +83,25 @@ IsBackTab()
     key: "Tab",
     code: "Tab",
     ctrlKey: false,
-    shiftKey: true,
+    shiftKey: false,
     altKey: false,
     metaKey: false,
     repeat: false,
     bubbles: true
   };
-  let keyDownEvent = new KeyboardEvent('keydown', eventOptions);
+  let keyDownEvent = new KeyboardEvent(eventName, eventOptions);
+        
   this.CompareValue = true;
   targetInput.dispatchEvent(keyDownEvent);
 
-  // BackTab
-  eventOptions.shiftKey = false;
-  keyDownEvent = new KeyboardEvent('keydown', eventOptions);
-  this.CompareValue = false;
-  targetInput.dispatchEvent(keyDownEvent);
-
-  let element = LJC.Element("targetInput");
-  element.removeEventListener("keydown", handler);
+  targetInput.removeEventListener("keydown", handler);
 }
 
-IsBackTabHandler(keyDownEvent)
+IsKeyHandler(keyDownEvent)
 {
-  const result = LJC.IsBackTab(keyDownEvent);
+  const result = LJC.IsKey("Tab", keyDownEvent);
 
-  // result
+  // result:
   // this.CompareValue;
 }</pre>
             </td>

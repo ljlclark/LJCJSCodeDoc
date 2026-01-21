@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- Copyright(c) Lester J. Clark and Contributors. -->
 <!-- Licensed under the MIT License.-->
-<!-- LJCIsShiftOnly.html -->
+<!-- LJCIsShiftedKey.html -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>IsShiftOnly</title>
+  <title>IsShiftedKey</title>
   <meta charset="utf-8" />
   <meta name="author" content="Lester J. Clark" />
   <meta name="description" content="JS method code documentation." />
@@ -18,20 +18,21 @@
       / <a href="../../LJCJSCodeDoc.html#LJCCommonLib">LJCJSCodeDoc</a>
       / <a href="../LJCCommonLib.html">LJCCommonLib</a>
       / <a href="LJC.html">LJC</a>
-      / IsShiftOnly
+      / IsShiftedKey
     </div>
     <br />
     <div id='Header'>
-      <div id='Title'>Method IsShiftOnly</div>
+      <div id='Title'>Method IsShiftedKey</div>
     </div>
     <br />
     <div id='Title'>Parameters</div>
-    <div class='Text'>keyDownEvent - The target event.</div>
+    <div class='Text'>key - The key value.</div>
+    <div class='Text'>keyDownEvent - The keydown event.</div>
     <br />
     <div class='Text'>Returns</div>
     <br />
     <div class='Text'>
-      true if only a Shift key; otherwise false.
+      true if the supplied key and shift key; otherwise false.
     </div>
     <br />
     <div class='Text'>Syntax</div>
@@ -42,7 +43,7 @@
           <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              static IsShiftOnly(keyDownEvent)
+              static IsShiftedKey(key, keyDownEvent)
             </td>
           </tr>
         </tbody>
@@ -50,7 +51,7 @@
     </div>
     <br />
     <div class='Text'>
-      Checks keydown for only a Shift key.
+      Checks keydown for a shift and the supplied key.
     </div>
     <br />
     <div class='Text'>Example</div>
@@ -68,19 +69,19 @@
 &lt;/body&gt;
 
 CompareValue = "";
-
-// Checks keydown for only a Shift key.
-IsShiftOnly()
+      
+// Checks keydown for a shift and the supplied key.
+IsShiftKey()
 {
   const elementID = "targetInput";
   const eventName = "keydown";
-  const handler = this.IsShiftOnlyHandler.bind(this);
+  const handler = this.IsShiftedKeyHandler.bind(this);
   LJC.AddEvent(elementID, eventName, handler);
 
   // Tab
   let eventOptions = {
-    key: "Shift",
-    code: "",
+    key: "Tab",
+    code: "Tab",
     ctrlKey: false,
     shiftKey: true,
     altKey: false,
@@ -88,23 +89,17 @@ IsShiftOnly()
     repeat: false,
     bubbles: true
   };
-  let keyDownEvent = new KeyboardEvent('keydown', eventOptions);
+  let keyDownEvent = new KeyboardEvent(eventName, eventOptions);
   this.CompareValue = true;
   targetInput.dispatchEvent(keyDownEvent);
 
-  // BackTab
-  eventOptions.key = "";
-  eventOptions.shiftKey = false;
-  keyDownEvent = new KeyboardEvent('keydown', eventOptions);
-  this.CompareValue = false;
-  targetInput.dispatchEvent(keyDownEvent);
-
-  targetInput.removeEventListener("keydown", handler);
+  let element = LJC.Element("targetInput");
+  element.removeEventListener("keydown", handler);
 }
 
-IsShiftOnlyHandler(keyDownEvent)
+IsShiftedKeyHandler(keyDownEvent)
 {
-  const result = LJC.IsShiftOnly(keyDownEvent);
+  const result = LJC.IsShiftenKey("Tab", keyDownEvent);
 
   // result
   // this.CompareValue;
