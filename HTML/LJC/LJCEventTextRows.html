@@ -56,10 +56,41 @@
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
+&lt;body&gt;
+  &lt;!-- The dialog for debug or other display text. --&gt;
+  &lt;dialog id="textDialog"
+    style="border: none; padding: 0px"&gt;
+    &lt;textarea id="textArea" rows="25" cols="80" autocorrect="off"
+      autocapitalize="off" spellcheck="false" readonly
+      style="border: none; padding: 10px"&gt;
+    &lt;/textarea&gt;
+  &lt;/dialog&gt;
+&lt;/body&gt;
+
 // Sets the textarea rows for newlines.
 EventTextRows()
 {
+  const elementID = "textArea";
+  const eventName = "keydown";
+  const handler = this.IsEnterHandler.bind(this);
+  LJC.AddEvent(elementID, eventName, handler);
 
+  // Enter
+  let eventOptions = {
+    key: "Enter",
+    code: "Enter",
+    ctrlKey: false,
+    shiftKey: false,
+    altKey: false,
+    metaKey: false,
+    repeat: false,
+    bubbles: true,
+  };
+  let keyDownEvent = new KeyboardEvent(eventName, eventOptions);
+  this.CompareValue = true;
+  textArea.dispatchEvent(keyDownEvent);
+
+  textArea.removeEventListener(eventName, handler);
 }</pre>
             </td>
           </tr>
