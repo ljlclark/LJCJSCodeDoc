@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- Copyright(c) Lester J. Clark and Contributors. -->
+<!-- Licensed under the MIT License.-->
+<!-- CollectionClone.html -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Clone</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Lester J. Clark" />
+  <meta name="description" content="JS method code documentation." />
+  <meta name="viewport" content="width=device-width" , initial-scale=1 />
+  <link rel='stylesheet' type='text/css' href='../../CSS/CodeDoc.css' />
+</head>
+<body style="background: #F0F5FF">
+  <div style="margin-left: 15px; margin-right: 10px">
+    <br />
+    <div class="PathText">
+      / <a href="../../LJCJSCodeDoc.html#LJCCommonLib">LJCJSCodeDoc</a>
+      / <a href="../LJCCollectionLib.html">LJCCollectionLib</a>
+      / <a href="LJCCollection.html">LJCCollection</a>
+      / Clone
+    </div>
+    <br />
+    <div id='Header'>
+      <div id='Title'>Method Clone</div>
+    </div>
+    <br />
+    <div id='Title'>Parameters</div>
+    <div class='Text'>items - The new object template.</div>
+    <br />
+    <div class='Text'>Returns</div>
+    <br />
+    <div class='Text'>The cloned object.</div>
+    <br />
+    <div class='Text'>Syntax</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              Clone(items)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <div class='Text'>
+      Creates a clone of this object.
+    </div>
+    <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+// Creates a clone of this object.
+Clone()
+{
+  const testItems = new TestItems();
+  let testItem = testItems.Add("NameOne");
+  testItem.Sequence = 1;
+  testItem = testItems.Add("NameTwo");
+  testItem.Sequence = 2;
+
+  // testItems is used as a template.
+  const clonedItems = testItems.Clone(testItems);
+  let result = 0;
+  if (LJC.HasItems(clonedItems))
+  {
+    result = clonedItems.Count;
+  }
+  
+  // result:
+  // 2;
+
+  let dataColumns = new LJCDataColumns();
+  dataColumns.AddValue("Name", "NameTwo");
+  testItem = testItems.Retrieve(dataColumns);
+  result = testItem.Sequence;
+
+  // result:
+  // 2
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <div class="SmallText">
+      Copyright &copy Lester J. Clark and Contributors.<br />
+      Licensed under the MIT License.
+    </div>
+  </div>
+</body>
+</html>

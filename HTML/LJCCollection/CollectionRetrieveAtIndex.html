@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- Copyright(c) Lester J. Clark and Contributors. -->
+<!-- Licensed under the MIT License.-->
+<!-- CollectionRetrieveAtIndex.html -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>RetrieveAtIndex</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Lester J. Clark" />
+  <meta name="description" content="JS method code documentation." />
+  <meta name="viewport" content="width=device-width" , initial-scale=1 />
+  <link rel='stylesheet' type='text/css' href='../../CSS/CodeDoc.css' />
+</head>
+<body style="background: #F0F5FF">
+  <div style="margin-left: 15px; margin-right: 10px">
+    <br />
+    <div class="PathText">
+      / <a href="../../LJCJSCodeDoc.html#LJCCommonLib">LJCJSCodeDoc</a>
+      / <a href="../LJCCollectionLib.html">LJCCollectionLib</a>
+      / <a href="LJCCollection.html">LJCCollection</a>
+      / RetrieveAtIndex
+    </div>
+    <br />
+    <div id='Header'>
+      <div id='Title'>Method RetrieveAtIndex</div>
+    </div>
+    <br />
+    <div id='Title'>Parameters</div>
+    <div class='Text'>index - The index value.</div>
+    <br />
+    <div class='Text'>Returns</div>
+    <br />
+    <div class='Text'>The collection item at the supplied index.</div>
+    <br />
+    <div class='Text'>Syntax</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              RetrieveAtIndex(index)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <div class='Text'>
+      Retrieves the object with the supplied index.
+    </div>
+    <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+// Retrieves the object at the supplied index.
+RetrieveAtIndex()
+{
+  const testItems = new TestItems();
+  let testItem = testItems.Add("NameOne");
+  testItem.Sequence = 1;
+  testItem = testItems.Add("NameTwo");
+  testItem.Sequence = 2;
+
+  testItem = testItems.RetrieveAtIndex(1);
+  const result = testItem.Name;
+  
+  // result:
+  // NameTwo
+}</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <div class="SmallText">
+      Copyright &copy Lester J. Clark and Contributors.<br />
+      Licensed under the MIT License.
+    </div>
+  </div>
+</body>
+</html>
