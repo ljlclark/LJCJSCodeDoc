@@ -26,7 +26,7 @@
     </div>
     <br />
     <div id='Title'>Parameters</div>
-    <div class='Text'>selector - A CSS selector name.</div>
+    <div class='Text'>font - A CSS font object.</div>
     <div class='Text'>text - A string value.</div>
     <br />
     <div class='Text'>Returns</div>
@@ -43,7 +43,7 @@
           <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              static AverageCharWidth(selector, text)
+              static AverageCharWidth(font, text)
             </td>
           </tr>
         </tbody>
@@ -51,7 +51,7 @@
     </div>
     <br />
     <div class='Text'>
-      Gets the average character width using the first selector element font.
+      Gets the average character width for the supplied font and text.
     </div>
     <br />
     <div class='Text'>Example</div>
@@ -63,16 +63,37 @@
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
+&lt;body&gt;
+  &lt;!-- The dialog for debug or other display text. --&gt;
+  &lt;dialog id="textDialog"
+    style="border: none; padding: 0px"&gt;
+    &lt;textarea id="textArea" rows="25" cols="80" autocorrect="off"
+      autocapitalize="off" spellcheck="false" readonly
+      style="border: none; padding: 10px"&gt;
+    &lt;/textarea&gt;
+  &lt;/dialog&gt;
+&lt;/body&gt;
+
 // Gets the average character width using the first selector element font.
 AverageCharWidth()
 {
   const selector = "div";
+  let font = LJC.SelectorStyle(selector, "font");
   const text = "This is sample text.";
-  const result = LJC.AverageCharWidth(selector, text);
+  let result = LJC.AverageCharWidth(font, text);
 
-  // With font = "16px "Times New Roman"
-  // result:
+  // result;
+  // With font = "16px Times New Roman"
   // 6.22;
+
+  const textAreaID = "textArea";
+  const eTextArea = LJC.Element(textAreaID);
+  font = LJC.ElementStyle(eTextArea, "font");
+  result = LJC.AverageCharWidth(font, text);
+
+  // result:
+  // With font = "13.3333px monospace"
+  // 7.33;
 }</pre>
             </td>
           </tr>
