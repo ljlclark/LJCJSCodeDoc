@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- Copyright(c) Lester J. Clark and Contributors. -->
+<!-- Licensed under the MIT License.-->
+<!-- LJCTextBuilderGetBegin.html -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>GetBegin</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Lester J. Clark" />
+  <meta name="keywords" content="LJCCodeDoc, CodeDoc, Function, PHP" />
+  <meta name="description" content="PHP Function code documentation." />
+  <meta name="viewport" content="width=device-width" , initial-scale=1 />
+  <link rel='stylesheet' type='text/css' href='../../CSS/CodeDoc.css' />
+</head>
+<body style="background: #F0F5FF">
+  <div style="margin-left: 15px; margin-right: 10px">
+    <br />
+    <div class="PathText">
+      / <a href="../../LJCPHPCodeDoc.html#GenCodeDocLib">LJCPHPCodeDoc</a>
+      / <a href="../LJCTextBuilderLib.html">LJCTextBuilderLib</a>
+      / <a href="LJCTextBuilder.html">LJCTextBuilder</a>
+      / GetBegin
+    </div>
+    <br />
+    <div id='Header'>
+      <div id='Title'>Function GetBegin</div>
+    </div>
+    <br />
+    <div id='Title'>Parameters</div>
+    <div class='Text'>$name - The element name.</div>
+    <div class='Text'>$textState - The current text state values.</div>
+    <div class='Text'>$htmlAttribs - The element attributes.</div>
+    <div class='Text'>$addIndent - _ParamSummary_</div>
+    <div class='Text'>$childIndent - _ParamSummary_</div>
+    <br />
+    <div class='Text'>Returns</div>
+    <br />
+    <div class='Text'>
+      The HTML element begin tag.
+    </div>
+    <br />
+    <div class='Text'>Syntax</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr><th class='CodeTable'>PHP</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              public function GetBegin(string $name, LJCTextState $textState<br />, LJCAttributes $attribs = null, bool $addIndent = true<br />, bool $childIndent = true): string
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <div class='Text'>
+      Gets the element begin tag.
+    </div>
+    <br />
+    <div class='Text'>Remarks</div>
+    <br />
+    <div class='Text'>
+      GetBegin() is an "Get Text" method which creates the element opening tag
+      with GetCreate() and returns the text value.<br />
+      Note: One should set the "addIndent" parameter to false when adding text
+      to the builder after getting the text with a "GetText" method. This is
+      because the the indent has already been added with the "GetText"
+      method.
+    </div>
+    <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>PHP</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+ $textState = new LJCTextState();
+ $tb = new LJCTextBuilder();
+ 
+ // Example Method:
+ // Starts the text with a newline if the builder already has text, param
+ // allowNewLine = true and builder text does not end with a newline.
+ // The text begins with the current indent string if param
+ // addIndent = true.
+ // Defaults: addIndent = true, allowNewLine = true.
+ $result = $tb->GetBegin("body", $textState);
+ 
+ // result:
+ // &lt;body&gt;</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <div class="SmallText">
+      Copyright &copy Lester J. Clark and Contributors.<br />
+      Licensed under the MIT License.
+    </div>
+  </div>
+</body>
+</html>

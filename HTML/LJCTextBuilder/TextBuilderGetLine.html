@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- Copyright(c) Lester J. Clark and Contributors. -->
+<!-- Licensed under the MIT License.-->
+<!-- TextBuilderGetLine.html -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>GetLine</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Lester J. Clark" />
+  <meta name="keywords" content="LJCCodeDoc, CodeDoc, Function, PHP" />
+  <meta name="description" content="PHP Function code documentation." />
+  <meta name="viewport" content="width=device-width" , initial-scale=1 />
+  <link rel='stylesheet' type='text/css' href='../../CSS/CodeDoc.css' />
+</head>
+<body style="background: #F0F5FF">
+  <div style="margin-left: 15px; margin-right: 10px">
+    <br />
+    <div class="PathText">
+      / <a href="../../LJCPHPCodeDoc.html#GenCodeDocLib">LJCPHPCodeDoc</a>
+      / <a href="../LJCTextBuilderLib.html">LJCTextBuilderLib</a>
+      / <a href="LJCTextBuilder.html">LJCTextBuilder</a>
+      / GetLine
+    </div>
+    <br />
+    <div id='Header'>
+      <div id='Title'>Method GetLine</div>
+    </div>
+    <br />
+    <div id='Title'>Parameters</div>
+    <div class='Text'>text - The text value.</div>
+    <div class='Text'>addIndent - Indicates if the element can be indented.</div>
+    <div class='Text'>allowNewLine - Indicates if a new line can be added.</div>
+    <br />
+    <div class='Text'>Returns</div>
+    <br />
+    <div class='Text'>
+      The potentially indented and wrapped new text value.
+    </div>
+    <br />
+    <div class='Text'>Syntax</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              GetLine(text = null, addIndent = true<br />
+              &nbsp;&nbsp;, allowNewLine = true)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <div class='Text'>
+      Gets the potentially indented and wrapped text line.
+    </div>
+    <br />
+    <div class='Text'>Remarks</div>
+    <br />
+    <div class='Text'>
+      GetLine() is a "Get Text" method. It creates and returns the potentially
+      indented and wrapped text. It will start the returned text with a new line
+      if the builder already has text.<br />
+      It appends a new line to the returned text.
+      The applied indent is the product of the class properties IndentCount
+      and IndentCharCount. (IndentCount * IndentCharCount).<br />
+      The "addIndent" parameter defaults to true. Set it to false to prevent
+      indenting the line further.<br />
+      The "allowNewLine" parameter defaults to true. Set it to false to prevent
+      starting with a new line.<br />
+      Wraps the text with a newline if the WrapEnabled parameter is true and the
+      line length is greater than LineLimit.<br />
+      GetLine() works the same as GetText() except it appends a new line.
+    </div>
+    <br />
+    <div class='Text'>Example</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              <pre style='margin-left: 2px;'>
+const tb = new LJCTextBuilder();
+
+tb.AddText("This is an appended line.");
+tb.AddIndent();
+
+// Example Method:
+// Starts the text with a newline if the builder already has text, param
+// allowNewLine = true and builder text does not end with a newline.
+// The text begins with the current indent string if param
+// addIndent = true.
+// Ends the text with a newline.
+// Defaults: addIndent = true, allowNewLine = true.
+const text = tb.GetLine();
+tb.Text(text, false);
+
+tb.Text(":");
+const result = tb.ToString();
+
+// result:
+// This is an appended line.
+//   :</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <div class="SmallText">
+      Copyright &copy Lester J. Clark and Contributors.<br />
+      Licensed under the MIT License.
+    </div>
+  </div>
+</body>
+</html>

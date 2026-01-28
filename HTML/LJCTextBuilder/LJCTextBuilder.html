@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!-- Copyright(c) Lester J. Clark and Contributors. -->
+<!-- Licensed under the MIT License.-->
+<!-- LJCTextBuilder.html -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>LJCTextBuilder</title>
+  <meta charset='utf-8' />
+  <meta name="author" content="Lester J. Clark" />
+  <meta name="description" content="JS Class code documentation." />
+  <meta name="viewport" content="width=device-width" , initial-scale=1 />
+  <link rel='stylesheet' type='text/css' href='../../CSS/CodeDoc.css' />
+</head>
+<body style="background: #F0F5FF">
+  <div style="margin-left: 15px; margin-right: 10px">
+    <br />
+    <div class="PathText">
+      / <a href="../../LJCJSCodeDoc.html#LJCDBAccessLib">LJCJSCodeDoc</a>
+      / <a href="../LJCTextBuilderLib.html">LJCTextBuilderLib</a>
+      / LJCTextBuilder
+    </div>
+    <br />
+    <div id='Header'>
+      <div id='Title'>Class LJCTextBuilder</div>
+    </div>
+    <br />
+    <div class='Text'>Syntax</div>
+    <br />
+    <div class='SectionContainer'>
+      <table class='CodeTable'>
+        <tbody>
+          <tr><th class='CodeTable'>JavaScript</th></tr>
+          <tr class='CodeTable'>
+            <td class='CodeTable'>
+              class TextBuilder
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <div class='Text'>
+      Represents a built string value.
+    </div>
+    <br />
+    <div class='Text'>Remarks</div>
+    <br />
+    <div class='Text'>
+      The LJCTextBuilder class is designed for creating text. It can also be
+      used to create HTML and XML text.
+      <p>
+        The LJCTextBuilder class stores the built text internally. The text is
+        retrieved with the ToString() method.
+      </p>
+      <p>
+        <b>"Append" Methods</b><br />
+        "Append Text" methods add the potentially indented and wrapped text to the
+        builder.<br />
+        These methods append the supplied text without an ending newline. This
+        behavior is done for consistency and it allows for appending to the
+        existing text if desired.<br />
+        The "Append" methods start the appended text with a newline if the
+        builder already has text, param allowNewLine = true (default) and the
+        builder text does not already end with a newline.
+      </p>
+      <p>
+        <b>"Get" Methods</b><br />
+        "Get" methods create and return the potentialy indented and wrapped
+        text but do not add it to the builder.<br />
+        This allows for using the text outside of the builder.<br />
+        Use the "addIndent" parameter set to "false" when appending text to the
+        builder that was retrieved using a "Get" method. This is because the
+        indent may already have been added to the text by the "Get" method.
+      </p>
+      <p>
+        <b>"Add Text" Methods</b><br />
+        AddLine(), AddText()<br />
+        The "Add Text" methods add text to the builder unmodified except for
+        AddLine() which appends a newline.
+      </p>
+      <p>
+        <b>"Append Text" Methods</b><br />
+        Line(), Text()<br />
+        The "Append Text" methods add the potentially indented and wrapped text
+        to the builder. The Line() method appends a newline.
+      </p>
+      <p>
+        The AddIndent() method manually controls the current indent count.
+        The indent string length is calculated with the properties
+        (IndentCount * IndentCharCount) and can be retrieved with the
+        IndentLength property.
+      </p>
+      <p>
+        <b>"Get Text" Methods</b><br />
+        GetLine(), GetText()<br />
+        The  "Get Text" methods create and return the potentialy indented and
+        wrapped text but do not add it to the builder.<br />
+        The GetLine() and GetText() methods modify the returned text the same as
+        the Line() and Text() methods.
+      </p>
+      <p>
+        <b>"Append Element" Methods</b><br />
+        Begin(), Create(), End()<br />
+        These methods append element tags and content. Begin() automatically
+        increments the IndentCount by 1. Create() also increments the IndentCount
+        by 1 if the isEmpty parameter is false and the close parameter is false.
+        End() automatically decrements the IndentCount by 1 if the IndentCount
+        is currently greater than zero.
+      </p>
+      <b>"Get Element" Methods</b><br />
+      GetBegin(), GetCreate(), GetEnd()<br />
+      The  "Get Element" methods create and return the potentialy indented and
+      wrapped text but do not add it to the builder.
+    </div>
+    <br />
+    <div id='Title'>Public Methods</div>
+    <br />
+    <table class='ListTable'>
+    </table>
+    <div class="Title2">Constructor Methods</div>
+    <table class="ListTable">
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderConstructor.html'>construct</a></td>
+        <td class='ListTable'>
+          Initializes a class instance.
+        </td>
+      </tr>
+    </table>
+    <div class="Title2">Data Class Methods</div>
+    <table class="ListTable">
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderToString.html'>ToString</a></td>
+        <td class='ListTable'>
+          Gets the built string.
+        </td>
+      </tr>
+    </table>
+    <div class="Title2">Add Text</div>
+    <table class="ListTable">
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderAddLine.html'>AddLine</a></td>
+        <td class='ListTable'>
+          Appends a text line without modification.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderAddText.html'>AddText</a></td>
+        <td class='ListTable'>
+          Appends text without modification.
+        </td>
+      </tr>
+    </table>
+    <div class="Title2">Append Text</div>
+    <table class="ListTable">
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderLine.html'>Line</a></td>
+        <td class='ListTable'>
+          Appends a potentially indented text line to the builder.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderText.html'>Text</a></td>
+        <td class='ListTable'>
+          Appends the potentially indented text.
+        </td>
+      </tr>
+    </table>
+    <div class="Title2">Get Text</div>
+    <table class="ListTable">
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderGetLine.html'>GetLine</a></td>
+        <td class='ListTable'>
+          Gets the potentially indented and wrapped text line.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderGetText.html'>GetText</a></td>
+        <td class='ListTable'>
+          Gets the potentially indented and wrapped text.
+        </td>
+      </tr>
+    </table>
+    <div class="Title2">Other Get Text</div>
+    <table class="ListTable">
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderGetIndented.html'>GetIndented</a></td>
+        <td class='ListTable'>
+          Gets a new potentially indented line.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderGetIndentString.html'>GetIndentString</a></td>
+        <td class='ListTable'>
+          Returns the current indent string.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderGetWrapped.html'>GetWrapped</a></td>
+        <td class='ListTable'>
+          Appends added text and new wrapped line.
+        </td>
+      </tr>
+    </table>
+    <div class="Title2">Get Attribs</div>
+    <table class="ListTable">
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderAttribs.html'>Attribs</a></td>
+        <td class='ListTable'>
+          Gets common element attributes.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderGetAttribs.html'>GetAttribs</a></td>
+        <td class='ListTable'>
+          Gets the attributes text.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderStartAttribs.html'>StartAttribs</a></td>
+        <td class='ListTable'>
+          Creates the HTML element attributes.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderStartXMLAttribs.html'>StartXMLAttribs</a></td>
+        <td class='ListTable'>
+          Creates the XML element attributes.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderTableAttribs.html'>TableAttribs</a></td>
+        <td class='ListTable'>
+          Gets common table attributes.
+        </td>
+      </tr>
+    </table>
+    <div class="Title2">Append Element</div>
+    <table class="ListTable">
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderBegin.html'>Begin</a></td>
+        <td class='ListTable'>
+          Appends the element begin tag.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderCreate.html'>Create</a></td>
+        <td class='ListTable'>
+          Appends an element.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderEnd.html'>End</a></td>
+        <td class='ListTable'>
+          Appends the element end tag.
+        </td>
+      </tr>
+    </table>
+    <div class="Title2">Get Element</div>
+    <table class="ListTable">
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderGetBegin.html'>GetBegin</a></td>
+        <td class='ListTable'>
+          Gets the element begin tag.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderGetCreate.html'>GetCreate</a></td>
+        <td class='ListTable'>
+          Gets an element.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderGetEnd.html'>GetEnd</a></td>
+        <td class='ListTable'>
+          Gets the element end tag.
+        </td>
+      </tr>
+    </table>
+    <div class="Title2">Other Methods</div>
+    <table class="ListTable">
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderAddChildIndent.html'>AddChildIndent</a></td>
+        <td class='ListTable'>
+          Adds the new (child) indents.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderAddIndent.html'>AddIndent</a></td>
+        <td class='ListTable'>
+          Changes the IndentCount by the provided value.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderEndsWithNewLine.html'>EndsWithNewLine</a></td>
+        <td class='ListTable'>
+          Indicates if the builder text ends with a newline.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderGetTextState.html'>GetTextState</a></td>
+        <td class='ListTable'>
+          Gets a current LJCTextState object.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderHasText.html'>HasText</a></td>
+        <td class='ListTable'>
+          Indicates if the builder has text.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderIndentLength.html'>IndentLength</a></td>
+        <td class='ListTable'>
+          Gets the current indent length.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderStartWithNewLine.html'>StartWithNewLine</a></td>
+        <td class='ListTable'>
+          Checks if the text can start with a newline.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuildergetIndentCount.html'>getIndentCount</a></td>
+        <td class='ListTable'>
+          _FunctionSummary_
+        </td>
+      </tr>
+    </table>
+    <div class='Text'>30 Functions</div>
+    <br />
+    <div id='Title'>Public Properties</div>
+    <table class='ListTable'>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderIndentCharCount.html'>IndentCharCount</a></td>
+        <td class='ListTable'>
+          _PropertySummary_
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderLineLength.html'>LineLength</a></td>
+        <td class='ListTable'>
+          Gets the current length.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderLineLimit.html'>LineLimit</a></td>
+        <td class='ListTable'>
+          Gets or sets the character limit.
+        </td>
+      </tr>
+      <tr>
+        <td class='ListTable' width='25%'><a href='TextBuilderWrapEnabled.html'>WrapEnabled</a></td>
+        <td class='ListTable'>
+          Indicates if the wrap functionality is enabled.
+        </td>
+      </tr>
+    </table>
+    <div class='Text'>3 Methods</div>
+    <br />
+    <div class="SmallText">
+      Copyright &copy Lester J. Clark and Contributors.<br />
+      Licensed under the MIT License.
+    </div>
+  </div>
+</body>
+</html>
