@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- Copyright(c) Lester J. Clark and Contributors. -->
 <!-- Licensed under the MIT License.-->
-<!-- LJCTextBuilderCreate.html -->
+<!-- LJCTextBuilderGetCreate.html -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>Create</title>
@@ -19,18 +19,18 @@
       / <a href="../../LJCPHPCodeDoc.html#GenCodeDocLib">LJCPHPCodeDoc</a>
       / <a href="../LJCTextBuilderLib.html">LJCTextBuilderLib</a>
       / <a href="LJCTextBuilder.html">LJCTextBuilder</a>
-      / Create
+      / GetCreate
     </div>
     <br />
     <div id='Header'>
-      <div id='Title'>Method Create</div>
+      <div id='Title'>Method GetCreate</div>
     </div>
     <br />
     <div id='Title'>Parameters</div>
     <div class='Text'>name - The element name.</div>
     <div class='Text'>text - The element content text.</div>
     <div class='Text'>textState - The current text state values.</div>
-    <div class='Text'>htmlAttribs - The element attributes.</div>
+    <div class='Text'>attribs - The element attributes.</div>
     <div class='Text'>addIndent - _ParamSummary_</div>
     <div class='Text'>childIndent - _ParamSummary_</div>
     <div class='Text'>isEmpty - Indicates if an empty element.</div>
@@ -50,7 +50,7 @@
           <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              Create(name, textState, text = "", attribs = null, addIndent = true)
+              GetCreate(name, textState, text = "", attribs = null, addIndent = true)<br />
               &nbsp;&nbsp;, childIndent = true, isEmpty = false, close = true)
             </td>
           </tr>
@@ -65,7 +65,7 @@
     <div class='Text'>Remarks</div>
     <br />
     <div class='Text'>
-      Create() is an "Append Element" method. It creates the element text with
+      GetCreate() is a "Get Element" method. It creates the element text with
       GetCreate() and adds it to the builder.
       The appended text does not end with a new line. This allows for additions
       after the text.<br />
