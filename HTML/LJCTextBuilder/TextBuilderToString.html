@@ -60,14 +60,18 @@
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
-const tb = new LJCTextBuilder();
-tb.Text("This is some text.");
+// Gets the built string.
+ToString()
+{
+  const tb = new LJCTextBuilder();
+  tb.Text("This is some text.");
 
-// Example Method:
-const result = tb.ToString();
+  // Example Method:
+  const result = tb.ToString();
 
-// result;
-// This is some text.</pre>
+  // result;
+  // "This is some text."
+}</pre>
             </td>
           </tr>
         </tbody>

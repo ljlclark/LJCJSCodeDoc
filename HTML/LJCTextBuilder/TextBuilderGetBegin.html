@@ -23,15 +23,15 @@
     </div>
     <br />
     <div id='Header'>
-      <div id='Title'>Function GetBegin</div>
+      <div id='Title'>Method GetBegin</div>
     </div>
     <br />
     <div id='Title'>Parameters</div>
-    <div class='Text'>$name - The element name.</div>
-    <div class='Text'>$textState - The current text state values.</div>
-    <div class='Text'>$htmlAttribs - The element attributes.</div>
-    <div class='Text'>$addIndent - _ParamSummary_</div>
-    <div class='Text'>$childIndent - _ParamSummary_</div>
+    <div class='Text'>name - The element name.</div>
+    <div class='Text'>textState - The current text state values.</div>
+    <div class='Text'>htmlAttribs - The element attributes.</div>
+    <div class='Text'>addIndent - _ParamSummary_</div>
+    <div class='Text'>childIndent - _ParamSummary_</div>
     <br />
     <div class='Text'>Returns</div>
     <br />
@@ -44,10 +44,10 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr><th class='CodeTable'>PHP</th></tr>
+          <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              public function GetBegin(string $name, LJCTextState $textState<br />, LJCAttributes $attribs = null, bool $addIndent = true<br />, bool $childIndent = true): string
+              GetBegin(name, textState, attribs = null, addIndent = true, childIndent = true)
             </td>
           </tr>
         </tbody>
@@ -74,23 +74,29 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr class='CodeTable'><th class='CodeTable'>PHP</th></tr>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
- $textState = new LJCTextState();
- $tb = new LJCTextBuilder();
- 
- // Example Method:
- // Starts the text with a newline if the builder already has text, param
- // allowNewLine = true and builder text does not end with a newline.
- // The text begins with the current indent string if param
- // addIndent = true.
- // Defaults: addIndent = true, allowNewLine = true.
- $result = $tb->GetBegin("body", $textState);
- 
- // result:
- // &lt;body&gt;</pre>
+// Gets the element begin tag.
+GetBegin()
+{
+  // Root Method Begin
+  let textState = new LJCTextState();
+
+  const tb = new LJCTextBuilder(textState);
+
+  // Example Method:
+  // Starts the text with a newline if the builder already has text, param
+  // allowNewLine = true and builder text does not end with a newline.
+  // The text begins with the current indent string if param
+  // addIndent = true.
+  const attribs = tb.Attribs("className");
+  const result = tb.GetBegin("div", textState, attribs);
+
+  // result:
+  // "&amp;lt;div class=\"className\"&amp;gt;>"
+}</pre>
             </td>
           </tr>
         </tbody>

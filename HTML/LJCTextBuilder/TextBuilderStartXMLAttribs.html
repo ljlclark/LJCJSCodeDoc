@@ -23,7 +23,7 @@
     </div>
     <br />
     <div id='Header'>
-      <div id='Title'>Function StartXMLAttribs</div>
+      <div id='Title'>Method StartXMLAttribs</div>
     </div>
     <br />
     <div class='Text'>Returns</div>
@@ -37,10 +37,10 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr><th class='CodeTable'>PHP</th></tr>
+          <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              public function StartXMLAttribs(): LJCAttributes
+              StartXMLAttribs()
             </td>
           </tr>
         </tbody>
@@ -56,23 +56,27 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr class='CodeTable'><th class='CodeTable'>PHP</th></tr>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
- // Root Method Begin
- $textState = new LJCTextState();
- 
- $tb = new LJCTextBuilder($textState);
- 
- // Example Method:
- $attribs = $tb->StartXMLAttribs();
- 
- $result = $tb->GetAttribs($attribs, $textState);
- 
- // result:
- //  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
- //  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</pre>
+// Creates the XML element attributes.
+StartXMLAttribs()
+{
+  // Root Method Begin
+  const textState = new LJCTextState();
+
+  const tb = new LJCTextBuilder(textState);
+
+  // Example Method:
+  const attribs = tb.StartXMLAttribs();
+        
+  const result = tb.GetAttribs(attribs, textState);
+
+  // result:
+  // " xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\""
+  // " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\""
+}</pre>
             </td>
           </tr>
         </tbody>

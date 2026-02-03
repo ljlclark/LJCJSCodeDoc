@@ -70,15 +70,19 @@
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
-const tb = new LJCTextBuilder();
+// Appends text without modification.
+AddText()
+{
+  const tb = new LJCTextBuilder();
 
-// Example Method:
-tb.AddText("This is some appended text.");
+  // Example Method:
+  tb.AddText("This is some appended text.");
 
-const result = tb.ToString();
+  const result = tb.ToString();
 
-// result:
-// This is some appended text.</pre>
+  // result:
+  // "This is some appended text."
+}</pre>
             </td>
           </tr>
         </tbody>

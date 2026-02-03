@@ -23,15 +23,15 @@
     </div>
     <br />
     <div id='Header'>
-      <div id='Title'>Function TableAttribs</div>
+      <div id='Title'>Method TableAttribs</div>
     </div>
     <br />
     <div id='Title'>Parameters</div>
-    <div class='Text'>$border - The border attribute.</div>
-    <div class='Text'>$borderSpacing - The borderspacing attribute</div>
-    <div class='Text'>$cellPadding - The cellpadding attribute</div>
-    <div class='Text'>$className - The class attribute.</div>
-    <div class='Text'>$id - The id attribute.</div>
+    <div class='Text'>border - The border attribute.</div>
+    <div class='Text'>borderSpacing - The borderspacing attribute</div>
+    <div class='Text'>cellPadding - The cellpadding attribute</div>
+    <div class='Text'>className - The class attribute.</div>
+    <div class='Text'>id - The id attribute.</div>
     <br />
     <div class='Text'>Returns</div>
     <br />
@@ -44,10 +44,10 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr><th class='CodeTable'>PHP</th></tr>
+          <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              public function TableAttribs(int $border = 1, int $borderSpacing = 0<br />, int $cellPadding = 2, string $className = null, string $id = null)
+              TableAttribs(border = 1, borderSpacing = 0, cellPadding = 2, className = null, id = null)
             </td>
           </tr>
         </tbody>
@@ -63,26 +63,34 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr class='CodeTable'><th class='CodeTable'>PHP</th></tr>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
- // Root Method Begin
- $textState = new LJCTextState();
- 
- $tb = new LJCTextBuilder($textState);
- 
- // Example Method:
- $border = 1;
- $cellspacing = 2;
- $cellpadding = 3;
- // Defaults: border = 1, borderspacing = 0, cellpadding = 2.
- $attribs = $tb->TableAttribs($border, $cellspacing, $cellpadding);
- 
- $result = $tb->GetAttribs($attribs, $textState);
- 
- // result:
- //  style="border: 1px solid; borderspacing: 2px; cellpadding: 3px;"</pre>
+// Gets common table attributes.
+TableAttribs()
+{
+  // Root Method Begin
+  let textState = new LJCTextState();
+
+  const tb = new LJCTextBuilder(textState);
+
+  // Example Method:
+  const className = "styleClass";
+  const id = "idValue";
+  const border = 1; // Default
+  const borderSpacing = 0; // Default
+  const cellPadding = 2; // Default
+  const attribs = tb.TableAttribs(border, borderSpacing, cellPadding
+  , className, id);
+        
+  const result = tb.GetAttribs(attribs, textState);
+
+  // result:
+  // " id=\"idValue\" class=\"styleClass\""
+  // " style=\"border: 1px solid; borderspacing: 0px;" // No newline
+  // " cellpadding: 2px;\"" // No newline
+}</pre>
             </td>
           </tr>
         </tbody>

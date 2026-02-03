@@ -23,7 +23,7 @@
     </div>
     <br />
     <div id='Header'>
-      <div id='Title'>Function EndsWithNewLine</div>
+      <div id='Title'>Method EndsWithNewLine</div>
     </div>
     <br />
     <div class='Text'>Returns</div>
@@ -37,10 +37,10 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr><th class='CodeTable'>PHP</th></tr>
+          <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              public function EndsWithNewLine(): bool
+              EndsWithNewLine()
             </td>
           </tr>
         </tbody>
@@ -56,18 +56,22 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr class='CodeTable'><th class='CodeTable'>PHP</th></tr>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
- $tb = new LJCTextBuilder();
- 
- // Example Method:
- $retValue = hb->EndsWithNewLine();
- $result = $retValue ? "true" : "false";
- 
- // result:
- // "false"</pre>
+// Indicates if the builder text ends with a newline.
+EndsWithNewLine()
+{
+  const tb = new LJCTextBuilder();
+  tb.Text("This text ends with a newline.\r\n");
+
+  // Example Method:
+  const result = tb.EndsWithNewLine();
+
+  // result:
+  // "true"
+}</pre>
             </td>
           </tr>
         </tbody>

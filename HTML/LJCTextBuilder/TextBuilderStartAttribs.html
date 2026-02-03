@@ -23,7 +23,7 @@
     </div>
     <br />
     <div id='Header'>
-      <div id='Title'>Function StartAttribs</div>
+      <div id='Title'>Method StartAttribs</div>
     </div>
     <br />
     <div class='Text'>Returns</div>
@@ -37,10 +37,10 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr><th class='CodeTable'>PHP</th></tr>
+          <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              public function StartAttribs(): LJCAttributes
+              StartAttribs()
             </td>
           </tr>
         </tbody>
@@ -56,22 +56,26 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr class='CodeTable'><th class='CodeTable'>PHP</th></tr>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
- // Root Method Begin
- $textState = new LJCTextState();
- 
- $tb = new LJCTextBuilder($textState);
- 
- // Example Method:
- $attribs = $tb->StartAttribs();
- 
- $result = $tb->GetAttribs($attribs, $textState);
- 
- // result:
- //  lang="en"</pre>
+// Creates the XML element attributes.
+StartAttribs()
+{
+  // Root Method Begin
+  let textState = new LJCTextState();
+
+  const tb = new LJCTextBuilder(textState);
+
+  // Example Method:
+  const attribs = tb.StartAttribs()
+        
+  const result = tb.GetAttribs(attribs, textState);
+
+  // result:
+  // " lang=\"en\""
+}</pre>
             </td>
           </tr>
         </tbody>

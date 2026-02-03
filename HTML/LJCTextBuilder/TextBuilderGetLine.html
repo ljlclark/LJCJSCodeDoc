@@ -45,8 +45,7 @@
           <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              GetLine(text = null, addIndent = true<br />
-              &nbsp;&nbsp;, allowNewLine = true)
+              GetLine(text = null, addIndent = true, allowNewLine = true)
             </td>
           </tr>
         </tbody>
@@ -84,27 +83,28 @@
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
-const tb = new LJCTextBuilder();
+// Gets a modified text line.
+GetLine()
+{
+  const tb = new LJCTextBuilder();
 
-tb.AddText("This is an appended line.");
-tb.AddIndent();
+  tb.AddText("This is an appended line.");
+  tb.AddIndent();
 
-// Example Method:
-// Starts the text with a newline if the builder already has text, param
-// allowNewLine = true and builder text does not end with a newline.
-// The text begins with the current indent string if param
-// addIndent = true.
-// Ends the text with a newline.
-// Defaults: addIndent = true, allowNewLine = true.
-const text = tb.GetLine();
-tb.Text(text, false);
+  // Example Method:
+  // Starts the text with a newline if the builder already has text, param
+  // allowNewLine = true and builder text does not end with a newline.
+  // The text begins with the current indent string if param
+  // addIndent = true.
+  // Ends the text with a newline.
+  let result = tb.GetLine("First Line");
+  result += tb.GetLine("This is some indented text.");
 
-tb.Text(":");
-const result = tb.ToString();
-
-// result:
-// This is an appended line.
-//   :</pre>
+  // result:
+  // "  First Line"
+  // "  This is some indented text."
+  // ""
+}</pre>
             </td>
           </tr>
         </tbody>

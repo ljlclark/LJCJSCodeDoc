@@ -23,7 +23,7 @@
     </div>
     <br />
     <div id='Header'>
-      <div id='Title'>Function IndentLength</div>
+      <div id='Title'>Method IndentLength</div>
     </div>
     <br />
     <div class='Text'>Returns</div>
@@ -37,10 +37,10 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr><th class='CodeTable'>PHP</th></tr>
+          <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              public function IndentLength(): int
+              IndentLength()
             </td>
           </tr>
         </tbody>
@@ -56,19 +56,22 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr class='CodeTable'><th class='CodeTable'>PHP</th></tr>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
- $tb = new LJCTextBuilder();
- 
- // Example Method:
- $tb->AddIndent();
- $retValue = $tb->IndentLength();
- $result = strval($retValue);
- 
- // result:
- // 2</pre>
+// Gets the current indent length.
+IndentLength()
+{
+  const tb = new LJCTextBuilder();
+  tb.AddIndent(2);
+
+  // Example Method:
+  const result = tb.IndentLength();
+
+  // result:
+  // 4
+}</pre>
             </td>
           </tr>
         </tbody>

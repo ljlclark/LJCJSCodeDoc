@@ -23,11 +23,11 @@
     </div>
     <br />
     <div id='Header'>
-      <div id='Title'>Function AddIndent</div>
+      <div id='Title'>Method AddIndent</div>
     </div>
     <br />
     <div id='Title'>Parameters</div>
-    <div class='Text'>$increment - _ParamSummary_</div>
+    <div class='Text'>increment - _ParamSummary_</div>
     <br />
     <div class='Text'>Returns</div>
     <br />
@@ -40,10 +40,10 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr><th class='CodeTable'>PHP</th></tr>
+          <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              public function AddIndent($increment = 1): int
+              AddIndent(increment = 1)
             </td>
           </tr>
         </tbody>
@@ -59,38 +59,22 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr class='CodeTable'><th class='CodeTable'>PHP</th></tr>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript/th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
- $tb = new LJCTextBuilder();
- 
- // Example Method:
- // The builder keeps track of the current number of indents.
- // Adds 1 indent by default.
- $tb->AddIndent();
- 
- // Adds text without modification.
- $tb->AddText("This text is not indented.");
- 
- // Starts the text with a newline if the builder already has text, param
- // allowNewLine = true and builder text does not end with a newline.
- // The text begins with the current indent string if param
- // addIndent = true.
- // Defaults: addIndent = true, allowNewLine = true.
- $tb->Text("This text is indented.");
- 
- // No Indent
- $tb->Text("Not indented.", addIndent: false);
- 
- // Do not start a newline.
- $tb->AddText(" No start with newline.");
- $result = hb->ToString();
- 
- // result:
- // This text is not indented.
- //   This text is indented.
- // Not indented. No start with newline.</pre>
+// Changes the IndentCount by the provided value.
+AddIndent()
+{
+  const tb = new LJCTextBuilder();
+
+  // Example Method:
+  tb.AddIndent(2);
+  const result = tb.GetText("This is indented text.");
+
+  // result:
+  // "    This is indented text."
+}</pre>
             </td>
           </tr>
         </tbody>

@@ -23,13 +23,13 @@
     </div>
     <br />
     <div id='Header'>
-      <div id='Title'>Function End</div>
+      <div id='Title'>Method End</div>
     </div>
     <br />
     <div id='Title'>Parameters</div>
-    <div class='Text'>$name - The element name.</div>
-    <div class='Text'>$textState - The current text state values.</div>
-    <div class='Text'>$addIndent - _ParamSummary_</div>
+    <div class='Text'>name - The element name.</div>
+    <div class='Text'>textState - The current text state values.</div>
+    <div class='Text'>addIndent - _ParamSummary_</div>
     <br />
     <div class='Text'>Returns</div>
     <br />
@@ -42,10 +42,10 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr><th class='CodeTable'>PHP</th></tr>
+          <tr><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
-              public function End(string $name, LJCTextState $textState<br />, bool $addIndent = true): string
+              End(name, textState, addIndent = true)
             </td>
           </tr>
         </tbody>
@@ -72,19 +72,29 @@
     <div class='SectionContainer'>
       <table class='CodeTable'>
         <tbody>
-          <tr class='CodeTable'><th class='CodeTable'>PHP</th></tr>
+          <tr class='CodeTable'><th class='CodeTable'>JavaScript</th></tr>
           <tr class='CodeTable'>
             <td class='CodeTable'>
               <pre style='margin-left: 2px;'>
- $textState = new LJCTextState();
- $tb = new LJCTextBuilder($textState);
- 
- // Example Method:
- $tb->End("p", $textState);
- $result = $tb->ToString();
- 
- // result:
- // &lt;/p&gt;</pre>
+// Appends the element end tag.
+End()
+{
+  // Root Method Begin
+  let textState = new LJCTextState();
+
+  const tb = new LJCTextBuilder(textState);
+  const attribs = tb.Attribs("className");
+  tb.Begin("div", textState, attribs);
+
+  // Example Method:
+  tb.End("div", textState);
+
+  const result = tb.ToString();
+
+  // result:
+  // "&amp;lt;div class=\"className\"&amp;gt;"
+  // "&amp;lt;/div&amp;gt;"
+}</pre>
             </td>
           </tr>
         </tbody>
